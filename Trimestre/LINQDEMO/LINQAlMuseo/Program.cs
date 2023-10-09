@@ -80,35 +80,27 @@ foreach(var group in nazionalitaCognome)
 {
     Console.WriteLine($"{group.Key.Nazionalita}: {group.Key.Cognome}");
     foreach(var opera in group)
-    {
         Console.WriteLine($"\t Opera: {opera.o.Titolo}");
-    }
 }
 Console.WriteLine("7) Trovare gli artisti di cui sono presenti almeno 2 opere");
 var opereArtisti = opere.GroupBy(o => o.FkArtista).Where(n => n.Count() >= 2).Join(artisti, o => o.Key, a => a.Id, (o,a) => a);
 Console.WriteLine("Artisti con almeno 2 opere:");
 foreach(var artista in opereArtisti)
-{
     Console.WriteLine(artista);
-}
+Console.WriteLine("Potrei non creare la variabile e scrivere:");
+opere.GroupBy(o => o.FkArtista).Where(n => n.Count() >= 2).Join(artisti, o => o.Key, a => a.Id, (o,a) => a).ToList().ForEach(Console.WriteLine);
 Console.WriteLine("8) Trovare le opere che hanno personaggi");
 var opereConPersonaggi = opere.Join(personaggi, o => o.Id, p => p.FkOperaId, (o,p) => o);
 foreach(var opera in opereConPersonaggi)
-{
     Console.WriteLine(opera);
-}
 Console.WriteLine("9) Trovare le opere che non hanno personaggi");
 var opereSenzaPersonaggi = opere.Where(o => !opereConPersonaggi.Contains(o));
 foreach (var opera in opereSenzaPersonaggi)
-{
     Console.WriteLine(opera);
-}
 Console.WriteLine("10) Trovare l’opera con il maggior numero di personaggi");
 var personaggiPerOpera = personaggi.GroupBy(p => p.FkOperaId).Select(group => new { IdOpera = group.Key, NumeroPersonaggi = group.Count() });
 var numeroMassimoPersonaggi = personaggiPerOpera.Max(t => t.NumeroPersonaggi);
 var opereConMaxNumeroPersonaggi = personaggiPerOpera.Where(t => t.NumeroPersonaggi == numeroMassimoPersonaggi)
     .Join(opere,t => t.IdOpera,o => o.Id,(t, o) => new { id = o.Id, o.Titolo, Personaggi = t.NumeroPersonaggi });
 foreach (var item in opereConMaxNumeroPersonaggi)
-{
     Console.WriteLine(item);
-}
