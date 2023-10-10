@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esempio3", "Esempio3\Esempi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQGym", "LINQGym\LINQGym.csproj", "{291274D2-F670-4217-B029-DB8AF39F3E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQAlMuseo", "LINQAlMuseo\LINQAlMuseo.csproj", "{2ECD0CC8-7FE4-4628-AB2E-B0D882F262DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQAlMuseo", "LINQAlMuseo\LINQAlMuseo.csproj", "{2ECD0CC8-7FE4-4628-AB2E-B0D882F262DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanziLINQ", "RomanziLINQ\RomanziLINQ.csproj", "{5A463741-CDEA-4352-A1E6-ECD854C6E37A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2ECD0CC8-7FE4-4628-AB2E-B0D882F262DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ECD0CC8-7FE4-4628-AB2E-B0D882F262DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ECD0CC8-7FE4-4628-AB2E-B0D882F262DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A463741-CDEA-4352-A1E6-ECD854C6E37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A463741-CDEA-4352-A1E6-ECD854C6E37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A463741-CDEA-4352-A1E6-ECD854C6E37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A463741-CDEA-4352-A1E6-ECD854C6E37A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
