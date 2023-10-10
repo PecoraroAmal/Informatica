@@ -33,40 +33,65 @@ List<Personaggio> personaggi = new()
     new (){PersonaggioId=4,Nome="Cesare", Ruolo="Protagonista", Sesso="Maschio", RomanzoId=8},
     new (){PersonaggioId=5,Nome="David", Ruolo="Protagonista", Sesso="Maschio", RomanzoId=10}
 };
-//Q1: creare un metodo che prende in input la nazionalità e stampa gli autori che hanno la nazionalità specificata
-//Q2: creare un metodo che prende in input il nome e il cognome di un autore e stampa tutti i romanzi di quell’autore
-//Q3: creare un metodo che prende in input la nazionalità e stampa quanti romanzi di quella nazionalità sono presenti nel database
-//Q4: creare un metodo che per ogni nazionalità stampa quanti romanzi di autori di quella nazionalità sono presenti nel database
-//Q5: creare un metodo che stampa il nome dei personaggi presenti in romanzi di autori di una data nazionalità
 Console.WriteLine("Q1");
 Q1("Inglese");
 Console.WriteLine("Q2");
 Q2("Shakespeare", "William");
 Console.WriteLine("Q3");
 Q3("Inglese");
+Console.WriteLine("Q4");
+Q4();
+Console.WriteLine("Q5");
+Q5("Inglese");
+//Q1: creare un metodo che prende in input la nazionalità e stampa gli autori che hanno la nazionalità specificata
 void Q1(string nazionalita)
 {
     var autoriPerNazionalita = autori.Where(n => n.Nazionalità == nazionalita).ToList();
     foreach(var item in autoriPerNazionalita)
         Console.WriteLine(item);
 }
-void Q2(string nome, string cognome)//sistemare
+//Q2: creare un metodo che prende in input il nome e il cognome di un autore e stampa tutti i romanzi di quell’autore
+void Q2(string cognome, string nome)
 {
-    var romanziDiAutore = autori.Where(c => c.Cognome == cognome && c.Nome == nome).Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a, r) => new { r.Titolo }).ToList();
+    var romanziDiAutore = autori.Where(c => c.Cognome == cognome && c.Nome == nome).Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a, r) => new {r.Titolo}).ToList();
     foreach (var item in romanziDiAutore)
         Console.WriteLine(item);
 }
+//Q3: creare un metodo che prende in input la nazionalità e stampa quanti romanzi di quella nazionalità sono presenti nel database
 void Q3(string nazionalita)
 {
-    var romanziDiNazionalita = autori.Where(n => n.Nazionalità == nazionalita).Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a,r) => new { r.Titolo}).ToList();
+    var romanziDiNazionalita = autori.Where(n => n.Nazionalità == nazionalita).Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a,r) => new {r.Titolo}).ToList();
     foreach (var item in romanziDiNazionalita)
         Console.WriteLine(item);
 }
-void Q4()
+//Q4: creare un metodo che per ogni nazionalità stampa quanti romanzi di autori di quella nazionalità sono presenti nel database
+void Q4()//non funziona
 {
-
+    var romanziPerNazionalita = autori.Join(romanzi, a => a.AutoreId, r => r.RomanzoId, (a, r) => new { a.Nazionalità, a.AutoreId, r.RomanzoId })
+        .GroupBy(n => n.Nazionalità).ToList();
+    foreach(var item in romanziPerNazionalita)
+    {
+        Console.WriteLine($"{item.Key} {item.Count()}");
+    }
 }
-void Q5()
+//Q5: creare un metodo che stampa il nome dei personaggi presenti in romanzi di autori di una data nazionalità
+void Q5(string nazionalita)
 {
-
+    var personaggiDiRomanziDiNazionalita = autori.Where(n => n.Nazionalità == nazionalita)
+        .Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a, r) => r)
+        .Join(personaggi, r => r.RomanzoId, p => p.RomanzoId, (r, p) => p.Nome).ToList();
+    foreach (var item in personaggiDiRomanziDiNazionalita)
+    {
+        Console.WriteLine(item);
+    }
 }
+//void Q4()
+//{
+//    var romanziPerNazionalita = autori.GroupBy(n => n.Nazionalità)
+//                                      .Select(n => new { Nazionalita = n.Key, NumeroRomanzi = n.Join(romanzi, a => a.AutoreId, r => r.AutoreId, (a, r) => r).Count() });
+
+//    foreach (var nazionalita in romanziPerNazionalita)
+//    {
+//        Console.WriteLine($"Nazionalità {nazionalita.Nazionalita} ci sono {nazionalita.NumeroRomanzi} romanzi");
+//    }
+//}
