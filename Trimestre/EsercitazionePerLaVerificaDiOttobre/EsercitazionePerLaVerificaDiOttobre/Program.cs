@@ -1,4 +1,5 @@
 ﻿using EsercitazionePerLaVerificaDiOttobre.Model;
+using System.Linq;
 
 namespace EsercitazionePerLaVerificaDiOttobre
 {
