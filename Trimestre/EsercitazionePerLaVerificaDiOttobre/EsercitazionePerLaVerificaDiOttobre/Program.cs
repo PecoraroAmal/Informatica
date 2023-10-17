@@ -47,6 +47,10 @@ namespace EsercitazionePerLaVerificaDiOttobre
             Q3();
             Console.WriteLine("Q4");
             Q4("Scuola 2");
+            Console.WriteLine("Q5");
+            Q5();
+            Console.WriteLine("Q6");
+            Q6();
         }
         //Q1) stampare tutti gli allunni di ciscuna scuola
         public static void Q1()
@@ -89,6 +93,31 @@ namespace EsercitazionePerLaVerificaDiOttobre
             foreach (var persona in tipologia)
             {
                 Console.WriteLine($"Nella {scuola} c'è {persona.j1.p.Cognome} {persona.j1.p.Nome} che gioca a {persona.j1.p.Videogioco} che è di tipo {persona.v.Tipologia}");
+            }
+        }
+        //Q5) stampare la scuola, il nome delle persone che giocano a un Multiplayer e si allenano al campo sportivo comunale
+        public static void Q5()
+        {
+            var studenti = videogiochi.Where(v => v.Tipologia == "Multiplayer")
+                .Join(persone, v => v.Nome, p => p.Videogioco, (v, p) => new { v, p })
+                .Join(sport, j1 => j1.p.Sport, s => s.Nome, (j1, s) => new { j1, s })
+                .Where(s => s.s.Luogo == "Campo Sportivo Comunale")
+                .Join(scuole, j1 => j1.j1.p.Scuola, s => s.Nome, (j1,s) => new {j1,s})
+                .ToList();
+            foreach(var risultato in studenti)
+            {
+                Console.WriteLine($"Nella {risultato.s.Nome} c'è {risultato.j1.j1.p.Cognome} {risultato.j1.j1.p.Nome} " +
+                    $"che gioca a {risultato.j1.j1.v.Nome} che è un {risultato.j1.j1.v.Tipologia}" +
+                    $" e si allena presso: {risultato.j1.s.Luogo}");
+            }
+        }
+        //Q6) stampare gli studenti in ordine alfabetico rispetto il cognome
+        public static void Q6()
+        {
+            var stud = persone.OrderBy(p => p.Cognome).ToList();
+            foreach(var person in stud)
+            {
+                Console.WriteLine($"{person.Cognome} {person.Nome} {person.Scuola} {person.Sport} {person.Videogioco}");
             }
         }
     }

@@ -83,7 +83,7 @@ static void CreazioneDb()
         PopulateDb(db);
     }
 
-    static void PopulateDb(FattureClientiContext db)
+    static void PopulateDb(FattureClientiContext db)//è alla base di tutto, c'è in verifica
     {
         //Creazione dei Clienti - gli id vengono generati automaticamente come campi auto-incremento quando si effettua l'inserimento, tuttavia
         //è bene inserire esplicitamente l'id degli oggetti quando si procede all'inserimento massivo gli elementi mediante un foreach perché
