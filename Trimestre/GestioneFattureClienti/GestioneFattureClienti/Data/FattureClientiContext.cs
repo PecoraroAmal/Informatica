@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 namespace GestioneFattureClienti.Data;
 public class FattureClientiContext : DbContext
 {
-    public DbSet<Fattura> Fatture { get; set; } = null!;//indica che la tabella non assumerà mai valore null
+    public DbSet<Fattura> Fatture { get; set; } = null!;//perdonami il null -> non sta assegnando un valore, sta dicendo che questa variabile non sarà mai nulla 
     public DbSet<Cliente> Clienti { get; set; } = null!;
     public string DbPath { get; }
 
@@ -17,5 +17,5 @@ public class FattureClientiContext : DbContext
         DbPath = path;
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite($"Data Source={DbPath}");
+        => optionsBuilder.UseSqlite($"Data Source={DbPath}");//Gli dico che uso Sqlite, se cambio databse cambio solo questa riga
 }
