@@ -23,10 +23,6 @@ public class UtilizziPCContext:DbContext
         modelBuilder.Entity<Studente>()
             .HasMany(s => s.Computers)
             .WithMany(c => c.Studenti)
-            .UsingEntity<Utilizza>(
-            //left => left.HasOne(u => u.Computer).WithMany(c => c.Utilizzi).HasForeignKey(u => u.ComputerId),
-            //right => right.HasOne(u => u.Studente).WithMany(s => s.Utilizzi).HasForeignKey(u => u.StudenteId),
-            //k =>k.HasKey( u => new {u.ComputerId, u.StudenteId, u.DataOraInizioUtilizzo })
-            );
+            .UsingEntity<Utilizza>();
     }
 }
