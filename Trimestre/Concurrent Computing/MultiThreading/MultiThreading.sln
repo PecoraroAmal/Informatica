@@ -7,17 +7,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiThreading", "MultiThre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsDemo", "ThreadsDemo\ThreadsDemo.csproj", "{99350523-8ED5-4901-9F07-09608D9FDE7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartWithParameters", "StartWithParameters\StartWithParameters.csproj", "{2B21219E-944B-47F0-8412-0615A68D3C2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartWithParameters", "StartWithParameters\StartWithParameters.csproj", "{2B21219E-944B-47F0-8412-0615A68D3C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepingDemo01", "SleepingDemo01\SleepingDemo01.csproj", "{9BE96FD7-AF81-4D59-9BD9-E6EE9DF79826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SleepingDemo01", "SleepingDemo01\SleepingDemo01.csproj", "{9BE96FD7-AF81-4D59-9BD9-E6EE9DF79826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopThread", "StopThread\StopThread.csproj", "{BEE15D66-C3BF-4C83-B774-0F996CD81068}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopThread", "StopThread\StopThread.csproj", "{BEE15D66-C3BF-4C83-B774-0F996CD81068}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolDemo", "ThreadPoolDemo\ThreadPoolDemo.csproj", "{7CC1D1F5-9859-4E2C-A437-6FD03F54B25A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolDemo", "ThreadPoolDemo\ThreadPoolDemo.csproj", "{7CC1D1F5-9859-4E2C-A437-6FD03F54B25A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedResources01", "SharedResources01\SharedResources01.csproj", "{FFBCF7A3-0731-4369-94BC-70D8BC0FB508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedResources01", "SharedResources01\SharedResources01.csproj", "{FFBCF7A3-0731-4369-94BC-70D8BC0FB508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicUpdate01", "AtomicUpdate01\AtomicUpdate01.csproj", "{D7ED6290-ED73-4553-A9C9-D0A327C1663F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtomicUpdate01", "AtomicUpdate01\AtomicUpdate01.csproj", "{D7ED6290-ED73-4553-A9C9-D0A327C1663F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPartition01", "DataPartition01\DataPartition01.csproj", "{16523A84-7EF4-4FB5-9C45-B6ABCAADDE43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockKeyword", "LockKeyword\LockKeyword.csproj", "{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{D7ED6290-ED73-4553-A9C9-D0A327C1663F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7ED6290-ED73-4553-A9C9-D0A327C1663F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7ED6290-ED73-4553-A9C9-D0A327C1663F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16523A84-7EF4-4FB5-9C45-B6ABCAADDE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16523A84-7EF4-4FB5-9C45-B6ABCAADDE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16523A84-7EF4-4FB5-9C45-B6ABCAADDE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16523A84-7EF4-4FB5-9C45-B6ABCAADDE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
