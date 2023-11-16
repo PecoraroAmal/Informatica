@@ -15,7 +15,7 @@ namespace LockKeyword
             Thread t1 = new Thread(() => {
                 for (int i = 0; i < 10000000; i++)
                 {
-                    lock (_lock)//Mutex -> MOnitor in mutua esclusione
+                    lock (_lock)//Mutex -> Monitor in mutua esclusione
                     {
                         //increment sum value
                         sum++;
