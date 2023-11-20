@@ -23,11 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataPartition01", "DataPart
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LockKeyword", "LockKeyword\LockKeyword.csproj", "{D9DBC273-F800-47F4-96CA-B721BCBDB3BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadGym", "ThreadGym\ThreadGym.csproj", "{259363BD-BAE4-4284-87D7-65F057A5D91A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadGym", "ThreadGym\ThreadGym.csproj", "{259363BD-BAE4-4284-87D7-65F057A5D91A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumerLIFO", "ProducerConsumerLIFO\ProducerConsumerLIFO.csproj", "{1DECBC24-46B5-47FE-B5E9-3CE48DB85C97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumerFIFO", "ProducerConsumerFIFO\ProducerConsumerFIFO.csproj", "{267DE906-CDAF-4121-A999-EEACF6E7BCE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProduttoreConsumatoreLIFO", "ProduttoreConsumatoreLIFO\ProduttoreConsumatoreLIFO.csproj", "{A11C127E-7B1C-44D6-A1EF-BD1FEA127644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProduttoreConsumatoreFIFO", "ProduttoreConsumatoreFIFO\ProduttoreConsumatoreFIFO.csproj", "{C4309A3A-F97F-4BF4-9EA9-2D934115FE5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{267DE906-CDAF-4121-A999-EEACF6E7BCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{267DE906-CDAF-4121-A999-EEACF6E7BCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{267DE906-CDAF-4121-A999-EEACF6E7BCE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11C127E-7B1C-44D6-A1EF-BD1FEA127644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11C127E-7B1C-44D6-A1EF-BD1FEA127644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11C127E-7B1C-44D6-A1EF-BD1FEA127644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11C127E-7B1C-44D6-A1EF-BD1FEA127644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4309A3A-F97F-4BF4-9EA9-2D934115FE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4309A3A-F97F-4BF4-9EA9-2D934115FE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4309A3A-F97F-4BF4-9EA9-2D934115FE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4309A3A-F97F-4BF4-9EA9-2D934115FE5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
