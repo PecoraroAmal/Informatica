@@ -37,7 +37,7 @@
                 //incremento il numero delle celle vuote
                 PrintArray(buffer);
                 emptyPosCount.Release();
-                Thread.Sleep(1000s);
+                Thread.Sleep(1000);
             }
         }
 
