@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithCustomData", "TaskW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithCustomDataSbagliato", "TaskWithCustomDataSbagliato\TaskWithCustomDataSbagliato.csproj", "{A864C480-0919-4D08-A14A-678AE05831DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReturnsValue01", "TaskReturnsValue01\TaskReturnsValue01.csproj", "{74CD69F7-8CF1-4966-A938-D94E8C8E4862}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A864C480-0919-4D08-A14A-678AE05831DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A864C480-0919-4D08-A14A-678AE05831DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A864C480-0919-4D08-A14A-678AE05831DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74CD69F7-8CF1-4966-A938-D94E8C8E4862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CD69F7-8CF1-4966-A938-D94E8C8E4862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CD69F7-8CF1-4966-A938-D94E8C8E4862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CD69F7-8CF1-4966-A938-D94E8C8E4862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
