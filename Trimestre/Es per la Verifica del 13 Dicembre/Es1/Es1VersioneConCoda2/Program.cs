@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Es1VersioneConCoda
+﻿namespace Es1VersioneConCoda2
 {
     internal class Program
     {
@@ -19,9 +17,10 @@ namespace Es1VersioneConCoda
         const int postiliberi = 5;
         static SemaphoreSlim PostiLiberi = new(postiliberi, postiliberi);
         static Random random = new Random();
-        static readonly object _lock = new ();
+        static readonly object _lock = new();
+        static readonly object _lockBimbi = new();
         static int numeroBimbiInAttesa = 0;
-        static SemaphoreSlim Attesa = new(1, 1);
+
         static void Main(string[] args)
         {
             //simuliamo l'avento dei bambini
@@ -35,23 +34,25 @@ namespace Es1VersioneConCoda
         private static void Giostra(object? obj)
         {
             bool siFerma = false;
-            Attesa.Wait();
-            if(numeroBimbiInAttesa < numeroMaxBimbiInCoda)
+            lock(_lockBimbi)
             {
-                numeroBimbiInAttesa++;
-                siFerma = true;
-                Console.WriteLine($"Numero bimbo in atessa {numeroBimbiInAttesa}");
+                if (numeroBimbiInAttesa < numeroMaxBimbiInCoda)
+                {
+                    numeroBimbiInAttesa++;
+                    siFerma = true;
+                    Console.WriteLine($"Numero bimbo in atessa {numeroBimbiInAttesa}");
+                }
             }
-            Attesa.Release();
             int indice = obj == null ? -1 : (int)obj;
             if (siFerma)
             {
                 Console.WriteLine($"Sono il bambino {indice}-mo, con Thread Id = {Environment.CurrentManagedThreadId} e attendo di salire sulla giostra");
                 PostiLiberi.Wait();
                 //Quando un bambino sale si libera un posto di attesa
-                Attesa.Wait();
-                numeroBimbiInAttesa--;
-                Attesa.Release();
+                lock(_lockBimbi)
+                {
+                    numeroBimbiInAttesa--;
+                }
                 Console.WriteLine($"Sono il bambino {indice}-mo, con Thread Id = {Environment.CurrentManagedThreadId} e sono sulla giostra");
                 //siccome più thread potrebbero lanciare il metodo Next contemporaneamente potremmo avere interferenze, pertanto usaimo il lock
                 int randomMillisecond;
