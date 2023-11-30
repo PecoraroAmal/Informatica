@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelForDemo", "ParallelForDemo\ParallelForDemo.csproj", "{3F71055B-B2A1-44F1-8B8A-4795B1D56720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelForDemo", "ParallelForDemo\ParallelForDemo.csproj", "{3F71055B-B2A1-44F1-8B8A-4795B1D56720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelMatricesMultiply", "ParallelMatricesMultiply\ParallelMatricesMultiply.csproj", "{95EA0190-F009-4B06-869E-2D4EFD9F9603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelMatricesMultiply", "ParallelMatricesMultiply\ParallelMatricesMultiply.csproj", "{95EA0190-F009-4B06-869E-2D4EFD9F9603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelForEachDemo", "ParallelForEachDemo\ParallelForEachDemo.csproj", "{FB9ACA69-4C18-47D5-8707-EAAC164AF361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelForWithThreadLocalVariabiles", "ParallelForWithThreadLocalVariabiles\ParallelForWithThreadLocalVariabiles.csproj", "{0F344B2B-8F16-48C3-9FD0-3B9D95AAD3E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{95EA0190-F009-4B06-869E-2D4EFD9F9603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95EA0190-F009-4B06-869E-2D4EFD9F9603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95EA0190-F009-4B06-869E-2D4EFD9F9603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9ACA69-4C18-47D5-8707-EAAC164AF361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9ACA69-4C18-47D5-8707-EAAC164AF361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9ACA69-4C18-47D5-8707-EAAC164AF361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9ACA69-4C18-47D5-8707-EAAC164AF361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F344B2B-8F16-48C3-9FD0-3B9D95AAD3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F344B2B-8F16-48C3-9FD0-3B9D95AAD3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F344B2B-8F16-48C3-9FD0-3B9D95AAD3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F344B2B-8F16-48C3-9FD0-3B9D95AAD3E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
