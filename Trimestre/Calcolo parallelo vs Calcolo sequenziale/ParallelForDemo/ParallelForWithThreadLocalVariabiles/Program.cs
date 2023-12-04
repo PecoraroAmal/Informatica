@@ -7,7 +7,7 @@ namespace ParallelForWithThreadLocalVariabiles
         static readonly object _lock = new object();
         static void Main(string[] args)
         {
-            const int Numbers = 1000000;
+            const int Numbers = 10_000_000;
             int[] nums = Enumerable.Range(1, Numbers).ToArray();//creo un array con i valori da 1 a N
             long total = 0;
             var watch = Stopwatch.StartNew();
@@ -60,7 +60,7 @@ namespace ParallelForWithThreadLocalVariabiles
             (x) => Interlocked.Add(ref total, x));
             watch.Stop();
             var millisecondiOptimizate = watch.ElapsedMilliseconds;
-            Console.WriteLine($"La somma dei primi {Numbers} è: {total} e con il lock impiego: {millisecondiOptimizate}ms");
+            Console.WriteLine($"La somma dei primi {Numbers} è: {total} e con Interlocked.Add impiego: {millisecondiOptimizate}ms");
             speed = (double)millisecondiOptimizate / millisecondiSequenziale;
             Console.WriteLine($"Speed: {speed}");
 
@@ -70,7 +70,7 @@ namespace ParallelForWithThreadLocalVariabiles
             long sommaGauss = (long)Numbers * (Numbers + 1) / 2;
             watch.Stop();
             var millisecondiGauss = watch.ElapsedMilliseconds;
-            Console.WriteLine($"La somma dei primi {Numbers} è: {sommaGauss} e con il lock impiego: {millisecondiGauss}ms");
+            Console.WriteLine($"La somma dei primi {Numbers} è: {sommaGauss} e con la formula di Gauss impiego: {millisecondiGauss}ms");
             speed = (double)millisecondiGauss / millisecondiSequenziale;
             Console.WriteLine($"Speed: {speed}");
         }

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsParallelo", "EsParallelo\EsParallelo.csproj", "{81A6F0DE-563C-42A2-A1A0-B8229707E7FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81A6F0DE-563C-42A2-A1A0-B8229707E7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A6F0DE-563C-42A2-A1A0-B8229707E7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A6F0DE-563C-42A2-A1A0-B8229707E7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A6F0DE-563C-42A2-A1A0-B8229707E7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43E2EE8D-6BD3-4DBB-92DB-6BAC1D8521F1}
+	EndGlobalSection
+EndGlobal
