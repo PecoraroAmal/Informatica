@@ -2,7 +2,7 @@
 using System.ComponentModel.Design;
 using System.Diagnostics;
 
-namespace EsParallelo
+namespace PiuFor
 {
     internal class Program
     {
@@ -22,9 +22,8 @@ namespace EsParallelo
         //attività in parallelo implementando il costrutto join(count). In particolare il thread che esegue SQ
         //fa partire SL e poi procede al suo calcolo; il thread che esegue SL fa partire SR e poi esegue il suo
         //calcolo specifico.
-        //Il main fa partire solo il thread che esegue SQ, ma deve attendere che tutti i thread abbiano finito
+
         const int N = 100_000_000;
-        static CountdownEvent count = new CountdownEvent(3);
         static double Sq;
         static double Sl;
         static double Sr;
@@ -34,36 +33,45 @@ namespace EsParallelo
         static readonly Stopwatch complessivo = Stopwatch.StartNew();
         static void Main(string[] args)
         {
-            Thread SommaReciproci = new Thread(SQ);
+            //Creazione
+            Thread sq = new Thread(SQ);
+            Thread sl = new Thread(SL);
+            Thread sr = new Thread(SR);
+            //Partenza quasi cobegin
             complessivo.Start();
-            SommaReciproci.Start();
-            count.Wait();
+            sq.Start();
+            sl.Start();
+            sr.Start();
+            //Attesa della fine dei tre thread
+            sq.Join();
+            sl.Join();
+            sr.Join();
             complessivo.Stop();
             var complessivoMilli = complessivo.ElapsedMilliseconds;
             Console.WriteLine($"Tempo totale impiegato: {complessivoMilli}");
+            //complessivo.Start();
+            //Parallel.Invoke(SQ, SL, SR);
+            //complessivo.Stop();
+            //var complessivoMilli = complessivo.ElapsedMilliseconds;
+            //Console.WriteLine($"Tempo totale impiegato: {complessivoMilli}");
         }
 
         private static void SQ(object? obj)
         {
-            Thread SommaLog = new Thread(SL);
-            SommaLog.Start();
             sq.Start();
-            for (long i = 1; i <= N+1; i++)
+            for (long i = 1; i <= N + 1; i++)
             {
                 checked
                 {
-                    Sq += 1.0 / (i*i);
+                    Sq += 1.0 / (i * i);
                 }
             }
             sq.Stop();
             var sqMilli = sq.ElapsedMilliseconds;
             Console.WriteLine($"1) Somma dei reciproci dei quadrati dei primi {N} numeri interi positivi: {Sq} calcolato in {sqMilli}ms");
-            count.Signal();
         }
         private static void SL(object? obj)
         {
-            Thread SommaRadici = new Thread(SR);
-            SommaRadici.Start();
             sl.Start();
             for (long i = 1; i <= N; i++)
             {
@@ -75,7 +83,6 @@ namespace EsParallelo
             sl.Stop();
             var srMilli = sl.ElapsedMilliseconds;
             Console.WriteLine($"2) Somma dei logaritmi in base 10 dei primi {N} numeri interi positivi: {Sl} calcolato in {srMilli}ms");
-            count.Signal();
         }
         private static void SR(object? obj)
         {
@@ -90,7 +97,6 @@ namespace EsParallelo
             sr.Stop();
             var slMilli = sr.ElapsedMilliseconds;
             Console.WriteLine($"3) Somma delle radici quadrate dei primi {N} numeri interi positivi: {Sr} calcolato in {slMilli}ms");
-            count.Signal();
         }
     }
 }

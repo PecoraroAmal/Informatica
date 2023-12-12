@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NegozioTask", "NegozioTask\NegozioTask.csproj", "{FBD9D554-BB12-407F-AB1C-76685BD702B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBD9D554-BB12-407F-AB1C-76685BD702B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD9D554-BB12-407F-AB1C-76685BD702B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD9D554-BB12-407F-AB1C-76685BD702B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD9D554-BB12-407F-AB1C-76685BD702B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AE84475-11FD-49D0-A5D4-5B6B22B6DDE6}
+	EndGlobalSection
+EndGlobal
