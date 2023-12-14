@@ -8,7 +8,7 @@ namespace SommaNumeriPrimi
     class Program
     {
         static int Max = 100_000;
-        static int n = 2;
+        static int n = 3;
         static int sommaSequenziale = 0;
         static int sommaParallela = 0;
         static int sommaThread = 0;
@@ -54,7 +54,7 @@ namespace SommaNumeriPrimi
 
             Parallel.For(2, Max, () => 0, (i, state, local) =>
             {
-                if (IsPrime(i))
+                if (Primo(i))
                 {
                     local += i;
                 }
@@ -72,7 +72,7 @@ namespace SommaNumeriPrimi
 
             Parallel.For(2, Max, i =>
             {
-                if (IsPrime(i))
+                if (Primo(i))
                 {
                     lock (lockObj)
                     {
@@ -89,7 +89,7 @@ namespace SommaNumeriPrimi
             int result = 0;
             for (int i = 2; i < Max; i++)
             {
-                if (IsPrime(i))
+                if (Primo(i))
                 {
                     result += i;
                 }
@@ -97,7 +97,7 @@ namespace SommaNumeriPrimi
             return result;
         }
 
-        private static bool IsPrime(int num)
+        private static bool Primo(int num)
         {
             if (num < 2) return false;
             for (int i = 2; i <= Math.Sqrt(num); i++)
