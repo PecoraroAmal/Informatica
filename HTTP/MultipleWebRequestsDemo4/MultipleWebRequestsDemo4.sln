@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleWebRequestsDemo4", "MultipleWebRequestsDemo4\MultipleWebRequestsDemo4.csproj", "{73E8448D-CC76-451C-B038-C1D1B27BEFBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73E8448D-CC76-451C-B038-C1D1B27BEFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E8448D-CC76-451C-B038-C1D1B27BEFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E8448D-CC76-451C-B038-C1D1B27BEFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E8448D-CC76-451C-B038-C1D1B27BEFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79EA051F-92BB-468F-A425-F5D2C3376F40}
+	EndGlobalSection
+EndGlobal

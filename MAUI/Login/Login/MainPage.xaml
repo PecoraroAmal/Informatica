@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:notes="clr-namespace:Login"
+             x:Class="Login.MainPage"
+             BackgroundColor="#512bdf">
+
+    <VerticalStackLayout Margin="40">
+        <VerticalStackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="30,60,30,30" />
+                <On Platform="Android" Value="30" />
+                <On Platform="WinUI" Value="30" />
+            </OnPlatform>
+        </VerticalStackLayout.Padding>
+        <VerticalStackLayout.BackgroundColor>
+            <OnPlatform x:TypeArguments="Color">
+                <On Platform="iOS" Value="Silver" />
+                <On Platform="Android" Value="Green" />
+                <On Platform="WinUI" Value="Yellow" />
+            </OnPlatform>
+        </VerticalStackLayout.BackgroundColor>
+        <Label Text="Please log in" FontSize="30" TextColor="AntiqueWhite"/>
+        <Label Text="Username" TextColor={x:Static Member=notes:SharedResources.FontColor} />
+        <Entry x:Name="Username" TextColor="White"/>
+        <Label Text="Password" TextColor="White" />
+        <Entry x:Name="Password" IsPassword="True" TextColor="White">
+            <Entry.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Password_Tapped" NumberOfTapsRequired="2"/>
+            </Entry.GestureRecognizers>
+        </Entry>
+        <Button x:Name="LoginButton" Text="Log in" BackgroundColor="#0094FF" Clicked="LoginButton_Clicked" />
+    </VerticalStackLayout>    
+</ContentPage>
