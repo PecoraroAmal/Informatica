@@ -242,7 +242,5 @@ namespace BingMapsAPIClient
             await EsempioDiScaricamentoMappaStaticaByQuery();
 
         }
-
     }
-
 }
