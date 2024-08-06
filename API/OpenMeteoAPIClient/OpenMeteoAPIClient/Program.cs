@@ -23,7 +23,7 @@ namespace OpenMeteoAPIClient
 
             try
             {
-                string place = "Monticello Brianza";
+                string place = "Besana in Brianza";
                 (double? lat, double? lon)? geo = await Utils.GeocodeByOpenMeteo(_client, place);
 
                 if (geo != null)

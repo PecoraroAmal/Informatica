@@ -21,9 +21,7 @@ namespace TaskParallelismControl
             /// <param name="processor">metodo da eseguire su ciascun elemento della collection</param>
             /// <param name="degreeOfParallelism">Grado di parallelismo</param>
             /// <returns>Restituisce un task che termina quando tutti i task che processano la collection hanno terminato</returns>
-            public static async Task ExecuteInParallel<T>(this IEnumerable<T> collection,
-                                               Func<T, Task> processor,
-                                               int degreeOfParallelism)
+            public static async Task ExecuteInParallel<T>(this IEnumerable<T> collection,Func<T, Task> processor,int degreeOfParallelism)
             {
                 //creo una coda Thrade-safe a partire dalla collection
                 var queue = new ConcurrentQueue<T>(collection);
@@ -40,9 +38,7 @@ namespace TaskParallelismControl
                 await Task.WhenAll(tasks);
             }
 
-            public static async Task<ConcurrentBag<Tresult>> ExecuteInParallel<T, Tresult>(this IEnumerable<T> collection,
-                                               Func<T, Task<Tresult>> processor,
-                                               int degreeOfParallelism)
+            public static async Task<ConcurrentBag<Tresult>> ExecuteInParallel<T, Tresult>(this IEnumerable<T> collection,Func<T, Task<Tresult>> processor, int degreeOfParallelism)
             {
                 //creo una coda Thrade-safe a partire dalla collection
                 var queue = new ConcurrentQueue<T>(collection);

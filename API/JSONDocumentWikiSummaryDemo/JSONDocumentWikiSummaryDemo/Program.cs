@@ -7,7 +7,7 @@ namespace JSONDocumentWikiSummaryDemo
     {
         static async Task Main(string[] args)
         {
-            string wikiUrl = "https://it.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&exsectionformat=plain&redirects=1&titles=Dante_Alighieri";
+            string wikiUrl = "https://it.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&exsectionformat=plain&redirects=1&titles=motore_a_scoppio";
             HttpClient client = HttpProxyHelper.CreateHttpClient(setProxy: true);
             //ottengo la risposta da Wikipedia come stringa
             string wikiSummaryJSON = await client.GetStringAsync(wikiUrl);
